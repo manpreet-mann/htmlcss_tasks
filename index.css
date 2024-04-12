@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    justify-content: center;
+}
+
+.mode {
+    /* width: 100%; */
+    background-color: palevioletred;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    animation-name: details;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes details {
+    0% {
+        left: 0%;
+    }
+    50% {
+        left: 20%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    background-color: beige;
+    border: 2px dotted black;
+    padding: 50px;
+    border-radius: 5px;
+}
+
+.traffic-light {
+    width: 66px;
+    background-color: rgb(217, 168, 143);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.light {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#red:checked~.traffic-light .red {
+    background-color: red;
+}
+
+#yellow:checked~.traffic-light .yellow {
+    background-color: yellow;
+}
+
+#green:checked~.traffic-light .green {
+    background-color: green;
+}
+
+#all:checked~.traffic-light .red {
+    background-color: red;
+}
+
+#all:checked~.traffic-light .yellow {
+    background-color: yellow;
+}
+
+#all:checked~.traffic-light .green {
+    background-color: green;
+}
+
+.button-container {
+    margin-left: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#red:checked~.button-container label[for="red"] {
+    background-color: red;
+}
+
+#yellow:checked~.button-container label[for="yellow"] {
+    background-color: yellow;
+}
+
+#green:checked~.button-container label[for="green"] {
+    background-color: green;
+}
+
+#all:checked~.button-container label[for="all"] {
+    background-color: blue;
+}
+
+#alt:checked~.button-container label[for="alt"] {
+    animation: infinite;
+    background-color: beige;
+}
+
+@keyframes alt {
+    10% {
+        background-color: red;
+    }
+
+    60% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.button {
+    margin: 21px;
+    padding: 10px;
+    background-color: rgb(202, 143, 66);
+    border-radius: 70px;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+    width: 100px;
+}
+
+#reset-btn {
+    font-size: large;
+    margin-top: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#alt:checked~.traffic-light .red {
+    animation: alt-red 2s infinite;
+    transition: 5s;
+    background-color: red;
+}
+
+#alt:checked~.traffic-light .yellow {
+    animation: alt-yellow 2s infinite;
+    transition: 5s;
+    background-color: yellow;
+}
+
+#alt:checked~.traffic-light .green {
+    animation: alt-green 2s infinite;
+    transition-duration: 5s;
+    background-color: green;
+}
+
+@keyframes alt-red {
+    10% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: #fff;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+@keyframes alt-yellow {
+    0% {
+        background-color: #fff;
+    }
+
+    60% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+@keyframes alt-green {
+    0% {
+        background-color: #fff;
+    }
+
+    50% {
+        background-color: #fff;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
